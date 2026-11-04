@@ -21,17 +21,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </p>
   </div>
 
-  <div class="space-y-12 mt-12">
+  <div class="space-y-16 mt-12">
 
     <!-- App 1: 5KR Kill Sheet -->
-    <section class="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800 relative overflow-hidden">
-      <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
-        <div class="flex-1">
+    <section class="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800 relative overflow-hidden group">
+      <div class="absolute -right-20 -top-20 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl group-hover:bg-cyan-500/10 transition-all pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Text details -->
+        <div class="lg:col-span-7">
           <div class="flex items-center gap-3 mb-3">
-            <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 font-semibold">
-              LIVE
+            <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 font-semibold flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+              LIVE IN PRODUCTION
             </span>
-            <span class="text-xs font-mono text-cyan-400">Single-Page Application</span>
+            <span class="text-xs font-mono text-cyan-400">Zero-Dependency SPA</span>
           </div>
 
           <h2 class="text-2xl sm:text-3xl font-bold text-white">5KR Kill Sheet</h2>
@@ -63,7 +67,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               rel="noopener noreferrer" 
               class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold text-sm hover:brightness-110 shadow-lg shadow-cyan-500/20 transition-all flex items-center gap-2"
             >
-              Launch Live Application ↗
+              Launch Live App ↗
             </a>
             <a 
               href="https://github.com/Greybeard00007/5kr-kill-sheet" 
@@ -71,22 +75,210 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               rel="noopener noreferrer" 
               class="px-4 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-slate-200 font-mono text-sm border border-slate-700 transition-colors flex items-center gap-2"
             >
-              GitHub Repository
+              GitHub Source
             </a>
+          </div>
+        </div>
+
+        <!-- Visual Console Mock -->
+        <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-2xl p-5 shadow-2xl font-mono text-xs text-slate-300">
+          <div class="flex items-center justify-between border-b border-slate-800/80 pb-3 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+              <span class="text-slate-400 text-[11px] ml-1">5KR-KILLSHEET-CONSOLE</span>
+            </div>
+            <span class="text-[10px] text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800">IADC VERIFIED</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="bg-slate-900/90 border border-slate-800 p-2.5 rounded-xl">
+              <div class="text-[10px] text-slate-400 uppercase">Drill Pipe (SIDPP)</div>
+              <div class="text-xl font-bold text-cyan-400 mt-1">850 <span class="text-xs text-slate-400 font-normal">psi</span></div>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-800 p-2.5 rounded-xl">
+              <div class="text-[10px] text-slate-400 uppercase">Casing (SICP)</div>
+              <div class="text-xl font-bold text-amber-400 mt-1">1,120 <span class="text-xs text-slate-400 font-normal">psi</span></div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="bg-slate-900/90 border border-slate-800 p-2.5 rounded-xl">
+              <div class="text-[10px] text-slate-400 uppercase">Kill Mud Weight</div>
+              <div class="text-xl font-bold text-emerald-400 mt-1">13.4 <span class="text-xs text-slate-400 font-normal">ppg (▲)</span></div>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-800 p-2.5 rounded-xl">
+              <div class="text-[10px] text-slate-400 uppercase">Strokes to Bit</div>
+              <div class="text-xl font-bold text-purple-400 mt-1">1,420 <span class="text-xs text-slate-400 font-normal">stks</span></div>
+            </div>
+          </div>
+
+          <!-- Dynamic SVG Stepdown Chart Preview -->
+          <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-xl">
+            <div class="flex justify-between text-[10px] text-slate-400 mb-2">
+              <span>CIRCULATING PRESSURE STEPDOWN</span>
+              <span class="text-cyan-400">ICP 1,450 ➔ FCP 720</span>
+            </div>
+            <svg class="w-full h-20" viewBox="0 0 300 80">
+              <defs>
+                <linearGradient id="stepdownGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+              <line x1="20" y1="10" x2="290" y2="10" stroke="#334155" stroke-dasharray="2 2"/>
+              <line x1="20" y1="45" x2="290" y2="45" stroke="#334155" stroke-dasharray="2 2"/>
+              <line x1="20" y1="70" x2="290" y2="70" stroke="#334155"/>
+              <path d="M 20 15 Q 120 40 180 55 L 290 55" fill="none" stroke="#06b6d4" stroke-width="2.5"/>
+              <path d="M 20 15 Q 120 40 180 55 L 290 55 L 290 70 L 20 70 Z" fill="url(#stepdownGrad)"/>
+              <circle cx="20" cy="15" r="3.5" fill="#38bdf8"/>
+              <circle cx="180" cy="55" r="3.5" fill="#10b981"/>
+              <circle cx="290" cy="55" r="3.5" fill="#10b981"/>
+              <text x="25" y="14" fill="#94a3b8" font-size="8">ICP</text>
+              <text x="185" y="52" fill="#10b981" font-size="8">KMW @ Bit (FCP)</text>
+            </svg>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- App 2: WellControl Suite -->
-    <section class="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800 relative overflow-hidden">
-      <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
-        <div class="flex-1">
+    <!-- App 2: WellSim Simulator -->
+    <section class="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800 relative overflow-hidden group">
+      <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl group-hover:bg-blue-500/10 transition-all pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Text details -->
+        <div class="lg:col-span-7">
           <div class="flex items-center gap-3 mb-3">
-            <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 font-semibold">
-              LIVE
+            <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 font-semibold flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+              LIVE IN PRODUCTION
             </span>
-            <span class="text-xs font-mono text-cyan-400">7-Screen Simulator & MCP Server</span>
+            <span class="text-xs font-mono text-cyan-400">Drift-Flux Multiphase Simulator</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">WellSim Simulator</h2>
+          <p class="text-sm font-mono text-slate-400 mt-1">wellsim.kcklayton.com</p>
+
+          <p class="text-sm sm:text-base text-slate-300 mt-4 leading-relaxed">
+            Transient multiphase flow simulation engine modeling gas kick migration, choke response dynamics, dynamic well kill ranging, and magnetic relief well interception algorithms. Solves Zuber-Findlay drift-flux equations with real-gas Z-factor compressibility.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 text-xs text-slate-300">
+            <div class="flex items-center gap-2">
+              <span class="text-cyan-400">✓</span> Real Gas Law ($P V = Z n R T$) Non-Linearity
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-cyan-400">✓</span> Dynamic Casing Shoe Breakdown Tracking
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-cyan-400">✓</span> Relief Well Magnetic Ranging Inversion
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-cyan-400">✓</span> Dockerized Microservice Architecture
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 mt-8">
+            <a 
+              href="https://wellsim.kcklayton.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold text-sm hover:brightness-110 shadow-lg shadow-cyan-500/20 transition-all flex items-center gap-2"
+            >
+              Launch Live App ↗
+            </a>
+            <a 
+              href="https://github.com/Greybeard00007/wellsim" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="px-4 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-slate-200 font-mono text-sm border border-slate-700 transition-colors flex items-center gap-2"
+            >
+              GitHub Source
+            </a>
+          </div>
+        </div>
+
+        <!-- Visual Simulator Mock -->
+        <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-2xl p-5 shadow-2xl font-mono text-xs text-slate-300">
+          <div class="flex items-center justify-between border-b border-slate-800/80 pb-3 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+              <span class="text-slate-400 text-[11px] ml-1">WELLSIM-SOLVER-V2</span>
+            </div>
+            <span class="text-[10px] text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800">TRANSIENT ACTIVE</span>
+          </div>
+
+          <!-- Wellbore Annular Column Graphic -->
+          <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-xl mb-4">
+            <div class="flex justify-between text-[10px] text-slate-400 mb-2">
+              <span>ANNULAR VOID FRACTION ($\alpha_g$)</span>
+              <span class="text-emerald-400">Gas Bubble Ascending</span>
+            </div>
+            
+            <div class="grid grid-cols-12 gap-2 items-center">
+              <!-- Borehole tube graphic -->
+              <div class="col-span-4 h-24 bg-slate-950 border border-slate-700 rounded-lg flex flex-col justify-between p-1 relative overflow-hidden">
+                <div class="w-full h-3 bg-red-900/60 border-b border-red-500/60 text-[8px] text-red-200 text-center">BOP Choke</div>
+                <!-- Rising bubble -->
+                <div class="w-full h-8 bg-gradient-to-t from-amber-500/60 to-yellow-400/80 rounded border border-amber-300 text-[8px] text-slate-950 font-bold flex items-center justify-center animate-pulse">
+                  Gas Kick
+                </div>
+                <div class="w-full h-3 bg-blue-900/60 border-t border-blue-500/60 text-[8px] text-blue-200 text-center">Shoe 9,500'</div>
+              </div>
+
+              <!-- Real-time metrics -->
+              <div class="col-span-8 space-y-2">
+                <div class="flex justify-between text-[11px] border-b border-slate-800 pb-1">
+                  <span class="text-slate-400">Kick Bubble Depth:</span>
+                  <span class="text-amber-400 font-bold">4,120 ft</span>
+                </div>
+                <div class="flex justify-between text-[11px] border-b border-slate-800 pb-1">
+                  <span class="text-slate-400">Shoe Pressure:</span>
+                  <span class="text-cyan-400 font-bold">4,810 psi</span>
+                </div>
+                <div class="flex justify-between text-[11px] border-b border-slate-800 pb-1">
+                  <span class="text-slate-400">Shoe Margin:</span>
+                  <span class="text-emerald-400 font-bold">+380 psi (Safe)</span>
+                </div>
+                <div class="flex justify-between text-[11px]">
+                  <span class="text-slate-400">Choke Opening:</span>
+                  <span class="text-purple-400 font-bold">38% Auto</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-slate-900/90 border border-slate-800 p-2.5 rounded-xl">
+              <div class="text-[10px] text-slate-400 uppercase">Mixture Velocity</div>
+              <div class="text-lg font-bold text-cyan-400 mt-1">4.82 <span class="text-xs text-slate-400 font-normal">ft/s</span></div>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-800 p-2.5 rounded-xl">
+              <div class="text-[10px] text-slate-400 uppercase">Z-Factor @ Bubble</div>
+              <div class="text-lg font-bold text-yellow-400 mt-1">0.814 <span class="text-xs text-slate-400 font-normal">(Non-Ideal)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App 3: WellControl Suite -->
+    <section class="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800 relative overflow-hidden group">
+      <div class="absolute -right-20 -top-20 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl group-hover:bg-purple-500/10 transition-all pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Text details -->
+        <div class="lg:col-span-7">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 font-semibold flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+              LIVE IN PRODUCTION
+            </span>
+            <span class="text-xs font-mono text-cyan-400">7-Screen Cyberbase & MCP Server</span>
           </div>
 
           <h2 class="text-2xl sm:text-3xl font-bold text-white">WellControl Suite</h2>
@@ -98,16 +290,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 text-xs text-slate-300">
             <div class="flex items-center gap-2">
-              <span class="text-cyan-400">✓</span> 1,312 Passing Unit & Integration Tests
+              <span class="text-cyan-400">✓</span> 7-Screen Rig Doghouse Cyber Console
             </div>
             <div class="flex items-center gap-2">
-              <span class="text-cyan-400">✓</span> 5 Certified MCP Operational Tools
+              <span class="text-cyan-400">✓</span> Certified MCP Physics Tool Provider
             </div>
             <div class="flex items-center gap-2">
-              <span class="text-cyan-400">✓</span> Real-Time WebSocket Choke Control
+              <span class="text-cyan-400">✓</span> Real-Time WebSocket Telemetry Bridge
             </div>
             <div class="flex items-center gap-2">
-              <span class="text-cyan-400">✓</span> Stripping, Snubbing & Volumetric Modes
+              <span class="text-cyan-400">✓</span> 1,312 Rigorous Unit Tests
             </div>
           </div>
 
@@ -118,7 +310,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               rel="noopener noreferrer" 
               class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold text-sm hover:brightness-110 shadow-lg shadow-cyan-500/20 transition-all flex items-center gap-2"
             >
-              Launch Simulator Console ↗
+              Launch Live App ↗
             </a>
             <a 
               href="https://github.com/Greybeard00007/wellcontrol" 
@@ -126,63 +318,57 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               rel="noopener noreferrer" 
               class="px-4 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-slate-200 font-mono text-sm border border-slate-700 transition-colors flex items-center gap-2"
             >
-              GitHub Repository
+              GitHub Source
             </a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- App 3: WellSim Simulator -->
-    <section class="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800 relative overflow-hidden">
-      <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
-        <div class="flex-1">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 font-semibold">
-              LIVE
-            </span>
-            <span class="text-xs font-mono text-cyan-400">Transient Multiphase Hydraulics</span>
+        <!-- Visual Cyberbase Console Mock -->
+        <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-2xl p-5 shadow-2xl font-mono text-xs text-slate-300">
+          <div class="flex items-center justify-between border-b border-slate-800/80 pb-3 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+              <span class="text-slate-400 text-[11px] ml-1">CYBERBASE-7-SCREEN-HMI</span>
+            </div>
+            <span class="text-[10px] text-purple-400 bg-purple-950/60 px-2 py-0.5 rounded border border-purple-800">MCP READY</span>
           </div>
 
-          <h2 class="text-2xl sm:text-3xl font-bold text-white">WellSim Simulator</h2>
-          <p class="text-sm font-mono text-slate-400 mt-1">wellsim.kcklayton.com</p>
-
-          <p class="text-sm sm:text-base text-slate-300 mt-4 leading-relaxed">
-            High-fidelity transient multiphase blowout simulation engine bench-marked against OLGA and experimental datasets. Solves drift-flux two-phase conservation equations, choked flow critical pressure boundaries, dynamic kill pumping rates, and relief well magnetic ranging trajectory intersections.
-          </p>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 text-xs text-slate-300">
-            <div class="flex items-center gap-2">
-              <span class="text-cyan-400">✓</span> 783 Automated Verification Tests
+          <!-- Cyberbase 7-Screen Layout Grid -->
+          <div class="grid grid-cols-3 gap-2 mb-4">
+            <div class="bg-slate-900/90 border border-cyan-800/60 p-2 rounded-lg text-center">
+              <div class="text-[9px] text-cyan-400 font-bold">1: DRILL CHOKE</div>
+              <div class="text-[10px] text-slate-300 mt-1">42% Pos</div>
             </div>
-            <div class="flex items-center gap-2">
-              <span class="text-cyan-400">✓</span> Drift-Flux Two-Phase Hydraulics
+            <div class="bg-slate-900/90 border border-slate-800 p-2 rounded-lg text-center">
+              <div class="text-[9px] text-slate-400 font-bold">2: MUD PUMPS</div>
+              <div class="text-[10px] text-emerald-400 mt-1">30 SPM</div>
             </div>
-            <div class="flex items-center gap-2">
-              <span class="text-cyan-400">✓</span> Monte Carlo Dynamic Kill Risk Engine
+            <div class="bg-slate-900/90 border border-slate-800 p-2 rounded-lg text-center">
+              <div class="text-[9px] text-slate-400 font-bold">3: PIT TOTAL</div>
+              <div class="text-[10px] text-amber-400 mt-1">+14.2 bbl</div>
             </div>
-            <div class="flex items-center gap-2">
-              <span class="text-cyan-400">✓</span> Relief Well Magnetic Ranging Solver
+            <div class="bg-slate-900/90 border border-slate-800 p-2 rounded-lg text-center">
+              <div class="text-[9px] text-slate-400 font-bold">4: TVD / MD</div>
+              <div class="text-[10px] text-slate-300 mt-1">12,450'</div>
+            </div>
+            <div class="bg-slate-900/90 border border-purple-800/60 p-2 rounded-lg text-center">
+              <div class="text-[9px] text-purple-400 font-bold">5: MCP AGENT</div>
+              <div class="text-[10px] text-purple-300 mt-1">ACTIVE</div>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-800 p-2 rounded-lg text-center">
+              <div class="text-[9px] text-slate-400 font-bold">6: LOT GRAD</div>
+              <div class="text-[10px] text-slate-300 mt-1">15.8 ppg</div>
             </div>
           </div>
 
-          <div class="flex flex-wrap items-center gap-4 mt-8">
-            <a 
-              href="https://wellsim.kcklayton.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold text-sm hover:brightness-110 shadow-lg shadow-cyan-500/20 transition-all flex items-center gap-2"
-            >
-              Launch Simulator ↗
-            </a>
-            <a 
-              href="https://github.com/Greybeard00007/wellsim" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="px-4 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-slate-200 font-mono text-sm border border-slate-700 transition-colors flex items-center gap-2"
-            >
-              GitHub Repository
-            </a>
+          <!-- MCP Live Stream Box -->
+          <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-xl font-mono text-[10px] text-slate-400">
+            <div class="text-purple-400 font-bold mb-1">[MCP JSON-RPC DISPATCH]</div>
+            <div class="text-slate-300">$ tool: <span class="text-cyan-400">wellcontrol_calculate_kmw</span></div>
+            <div class="text-slate-500">&#123;&quot;sidpp&quot;: 850, &quot;tvd&quot;: 12450, &quot;omw&quot;: 12.0&#125;</div>
+            <div class="text-emerald-400 mt-1">➔ result: &#123;&quot;kmw_ppg&quot;: 13.4, &quot;rounding&quot;: &quot;UP_0.1&quot;&#125;</div>
           </div>
         </div>
       </div>
