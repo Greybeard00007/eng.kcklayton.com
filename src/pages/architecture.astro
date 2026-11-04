@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const repos = [
+  { name: 'wellcontrol', tests: '1,312', desc: "Full-lifecycle well control calculations, 7-screen choke simulator & MCP server", tag: 'Physics & MCP', url: 'https://github.com/Greybeard00007/wellcontrol', live: 'https://wellcontrol.kcklayton.com' },
+  { name: 'wellsim', tests: '783', desc: 'Transient multiphase blowout, dynamic kill simulator & relief well magnetic ranging', tag: 'Multiphase Sim', url: 'https://github.com/Greybeard00007/wellsim', live: 'https://wellsim.kcklayton.com' },
+  { name: 'kill-sheet-calculations', tests: '636', desc: 'IWCF / IADC kill sheet engine + 45-module CWI & drilling engineering suite', tag: 'CWI Engine', url: 'https://github.com/Greybeard00007/kill-sheet-calculations', live: 'https://kill.kcklayton.com' },
+  { name: '5kr-kill-sheet', tests: '12', desc: 'Interactive IADC WellSharp kill sheet with directional rounding rules & choke tracking', tag: 'Production App', url: 'https://github.com/Greybeard00007/5kr-kill-sheet', live: 'https://kill.kcklayton.com' },
+  { name: 'witsml-edge-agent', tests: '320', desc: 'Air-gapped rig-edge WITSML telemetry AI sidecar with local Ollama inference', tag: 'Rig Edge AI', url: 'https://github.com/Greybeard00007/witsml-edge-agent' },
+  { name: 'ai-gateway-sentinel', tests: '185', desc: '3-tier multi-model fallback router (LiteLLM) with OpenTelemetry observability', tag: 'LLM Gateway', url: 'https://github.com/Greybeard00007/ai-gateway-sentinel' },
+  { name: 'bop-fault-sentinel', tests: '142', desc: 'BOP acoustic & hydraulic anomaly detection with real-time pressure signature analysis', tag: 'BOP Sentinel', url: 'https://github.com/Greybeard00007/bop-fault-sentinel' },
+  { name: 'event-driven-telemetry-mesh', tests: '160', desc: 'Event-driven sensor telemetry streaming mesh for high-frequency rig instrumentation', tag: 'Telemetry Mesh', url: 'https://github.com/Greybeard00007/event-driven-telemetry-mesh' },
+  { name: 'rig-digital-twin-core', tests: '210', desc: 'Physics-informed digital twin of drilling rig hoisting, circulating, and rotational systems', tag: 'Digital Twin', url: 'https://github.com/Greybeard00007/rig-digital-twin-core' },
+  { name: 'rig-vision-sentinel', tests: '95', desc: 'Computer vision red zone intrusion detection and hazardous area monitoring on drill floors', tag: 'Computer Vision', url: 'https://github.com/Greybeard00007/rig-vision-sentinel' },
+  { name: 'safety-graph-orchestrator', tests: '130', desc: 'Knowledge graph orchestrator for barrier verification and API RP 53 compliance', tag: 'Safety Graph', url: 'https://github.com/Greybeard00007/safety-graph-orchestrator' },
+  { name: 'wellbore-knowledge-graph', tests: '115', desc: 'Ontology and retrieval graph for historical well offsets, casing schemes, and lithology', tag: 'Ontology Graph', url: 'https://github.com/Greybeard00007/wellbore-knowledge-graph' }
+];
+---
+
+<BaseLayout 
+  title="End-to-End Rig Edge AI & Well Control Architecture — Kirk Keel"
+  description="System architecture connecting real-time WITSML telemetry, Model Context Protocol physics tool servers, and automated CI evaluation gates."
+>
+
+  <div class="max-w-4xl">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 text-xs font-mono uppercase tracking-widest mb-4">
+      Deterministic AI Architecture
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+      Energy AI & Rig Edge Architecture
+    </h1>
+    <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+      A decoupled, safety-critical architecture designed for hazardous drilling and well intervention environments. Real-time telemetry is ingested at the rig edge, reasoned over by agentic language models, and strictly gated by deterministic physics MCP tool servers.
+    </p>
+  </div>
+
+  <!-- Layer Breakdown -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+      <div class="w-8 h-8 rounded-lg bg-cyan-950 text-cyan-400 font-mono font-bold flex items-center justify-center mb-4 border border-cyan-800">1</div>
+      <h3 class="text-lg font-bold text-white">Rig Edge Telemetry</h3>
+      <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+        Parses high-frequency WITSML XML/JSON streams directly on the rig site. Runs sub-second threshold checks for kick pit gains, differential pressure changes, and pack-offs before hitting local model sidecars.
+      </p>
+    </div>
+
+    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+      <div class="w-8 h-8 rounded-lg bg-emerald-950 text-emerald-400 font-mono font-bold flex items-center justify-center mb-4 border border-emerald-800">2</div>
+      <h3 class="text-lg font-bold text-white">Deterministic MCP Physics</h3>
+      <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+        LLMs never guess bottomhole pressures or kill schedules. Instead, language agents invoke certified Model Context Protocol (MCP) tool servers backed by 2,731+ unit tests.
+      </p>
+    </div>
+
+    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+      <div class="w-8 h-8 rounded-lg bg-purple-950 text-purple-400 font-mono font-bold flex items-center justify-center mb-4 border border-purple-800">3</div>
+      <h3 class="text-lg font-bold text-white">Sentinel CI Governance</h3>
+      <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+        Autonomous gates verify groundedness, SOP section citations, and numeric consistency with zero allowable numeric drift against API RP 53 / IADC standards.
+      </p>
+    </div>
+  </div>
+
+  <!-- Repositories Grid -->
+  <section class="mt-16">
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h2 class="text-2xl font-bold text-white">Public Repository Portfolio</h2>
+        <p class="text-sm text-slate-400 mt-1">12 open-source engineering packages and systems under @Greybeard00007.</p>
+      </div>
+      <a 
+        href="https://github.com/Greybeard00007" 
+        target="_blank" 
+        class="text-xs sm:text-sm font-mono text-cyan-400 hover:text-cyan-300"
+      >
+        View GitHub Profile ↗
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {repos.map(r => (
+        <div class="p-5 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-slate-800 text-cyan-400">
+                {r.tag}
+              </span>
+              <span class="text-[11px] font-mono text-emerald-400 font-semibold">
+                {r.tests} tests
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-cyan-400 transition-colors">
+              <a href={r.url} target="_blank">
+                {r.name}
+              </a>
+            </h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              {r.desc}
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/60 flex items-center justify-between text-xs font-mono">
+            <a href={r.url} target="_blank" class="text-slate-400 hover:text-white transition-colors">
+              GitHub ↗
+            </a>
+            {r.live && (
+              <a href={r.live} target="_blank" class="text-cyan-400 hover:text-cyan-300 font-semibold">
+                Live App ↗
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+</BaseLayout>

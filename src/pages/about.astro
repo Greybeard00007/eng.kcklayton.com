@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="About Kirk Keel — Energy AI Architect & Principal Well Operations Engineer"
+  description="25+ years in drilling, completions, well intervention, and well control engineering. Leading deterministic AI architecture for safety-critical operations."
+>
+
+  <div class="max-w-3xl mx-auto py-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 text-xs font-mono uppercase tracking-widest mb-4">
+      Biography & Background
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+      About Kirk Keel
+    </h1>
+    <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed font-medium">
+      Energy AI Architect & Principal Well Operations Engineer based in Houston, Texas.
+    </p>
+
+    <!-- Bio Sections -->
+    <div class="mt-10 space-y-8 text-sm sm:text-base text-slate-300 leading-relaxed">
+      <section>
+        <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          25+ Years in High-Pressure Well Operations
+        </h2>
+        <p>
+          I have spent over two decades across drilling operations, completions, well intervention (CWI), and well control—managing operations across deepwater, HPHT, subsea, and complex extended-reach horizontal wells. My background spans hands-on choke operation, blowout relief well planning, snubbing/stripping under pressure, and coiled tubing engineering.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          Engineering Rig Edge AI with Deterministic Guardrails
+        </h2>
+        <p>
+          As artificial intelligence expands into industrial drilling environments, the greatest risk is unconstrained probabilistic prediction in safety-critical domains. My work focuses on building <strong>hybrid systems</strong>: pairing language model orchestration with deterministic physics engines via the **Model Context Protocol (MCP)**.
+        </p>
+        <p class="mt-3">
+          Every tool, simulator, and calculation engine I publish is grounded in verified engineering benchmarks (API RP 53, IADC WellSharp, IWCF, OLGA multiphase datasets) backed by over <strong>2,731 automated tests</strong>.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          Certifications & Standards Compliance
+        </h2>
+        <ul class="list-disc pl-5 space-y-2 text-slate-300">
+          <li><strong>Well Control Certifications:</strong> IADC WellSharp (Supervisor Level / Subsea), IWCF Level 4 Well Control.</li>
+          <li><strong>Industry Standards:</strong> API RP 53 (Blowout Prevention Systems), API RP 59 (Well Control Operations), API Spec 16A / 16D, API RP 16ST (Coiled Tubing Well Control).</li>
+          <li><strong>Multiphase Flow & Hydraulics:</strong> Drift-Flux Modeling, Peng-Robinson & Beggs-Brill PVT, OLGA transient verification.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          Software & Architecture Stack
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="font-bold text-white text-xs font-mono uppercase tracking-wider text-cyan-400 mb-2">Physics & Core Systems</h3>
+            <p class="text-xs text-slate-400">Python (FastAPI, NumPy, SciPy, Pydantic), C++, Rust, WebSocket event streaming, transient ODE solvers.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+            <h3 class="font-bold text-white text-xs font-mono uppercase tracking-wider text-cyan-400 mb-2">AI, Rig Edge & MLOps</h3>
+            <p class="text-xs text-slate-400">Model Context Protocol (MCP), LiteLLM gateway routing, Ollama edge inference, OpenTelemetry tracing, Docker, CI/CD gates.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-6 rounded-2xl bg-gradient-to-r from-slate-900 to-cyan-950/40 border border-slate-800 mt-10">
+        <h3 class="text-base font-bold text-white">Connect & Collaborate</h3>
+        <p class="text-xs text-slate-400 mt-1">Open for consulting, well control architecture advisory, and enterprise energy AI implementations.</p>
+        <div class="flex items-center gap-4 mt-4 text-xs font-mono">
+          <a href="https://github.com/Greybeard00007" target="_blank" class="text-cyan-400 hover:text-cyan-300">GitHub Profile (@Greybeard00007) ↗</a>
+          <span class="text-slate-600">·</span>
+          <a href="https://5kroil.com" target="_blank" class="text-cyan-400 hover:text-cyan-300">5KR Oil Services ↗</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</BaseLayout>

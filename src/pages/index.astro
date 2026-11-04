@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout title="Kirk Keel — Energy AI Architect & Principal Well Operations Engineer">
+
+  <!-- Hero Section -->
+  <section class="py-6 sm:py-10">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 text-xs font-mono uppercase tracking-widest mb-6">
+      <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+      Deterministic Physics · Rig Edge AI · MCP Tool Servers
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+      Kirk Keel
+      <span class="block text-2xl sm:text-3xl lg:text-4xl font-semibold bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent mt-2">
+        Energy AI Architect & Principal Well Operations Engineer
+      </span>
+    </h1>
+
+    <p class="mt-6 text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
+      25+ years in Drilling, Completions, Well Intervention (CWI) & Well Control. I engineer production-grade AI systems for safety-critical energy operations—combining <strong>real-time WITSML rig telemetry</strong>, <strong>deterministic multiphase physics</strong>, <strong>Model Context Protocol (MCP) tool servers</strong>, and <strong>CI-gated RAG compliance</strong>.
+    </p>
+
+    <!-- Core Principle Callout -->
+    <div class="mt-6 p-4 sm:p-5 rounded-xl bg-slate-900/90 border-l-4 border-cyan-500 border-y border-r border-slate-800 max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold mb-1">Core Architectural Principle</p>
+      <p class="text-sm sm:text-base italic text-slate-200">
+        "Never let an LLM guess wellbore pressures. Every agentic workflow pairs language reasoning with deterministic, API RP 53 / IADC / IWCF-verified physics engines and automated CI evaluation gates."
+      </p>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-4xl">
+      <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+        <span class="block text-2xl sm:text-3xl font-extrabold font-mono text-cyan-400">25+</span>
+        <span class="text-xs text-slate-400">Years Field & Rig Ops</span>
+      </div>
+      <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+        <span class="block text-2xl sm:text-3xl font-extrabold font-mono text-emerald-400">2,731+</span>
+        <span class="text-xs text-slate-400">Automated Unit Tests</span>
+      </div>
+      <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+        <span class="block text-2xl sm:text-3xl font-extrabold font-mono text-amber-400">3</span>
+        <span class="text-xs text-slate-400">Live Simulators & Apps</span>
+      </div>
+      <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+        <span class="block text-2xl sm:text-3xl font-extrabold font-mono text-purple-400">12</span>
+        <span class="text-xs text-slate-400">Public GitHub Repos</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Applications Section -->
+  <section class="mt-14 sm:mt-20">
+    <div class="flex items-end justify-between mb-8">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Production Simulators & Live Web Apps</h2>
+        <p class="text-sm text-slate-400 mt-1">Interactive engineering engines deployed and accessible in real-time.</p>
+      </div>
+      <a href="/apps" class="text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-1">
+        View All Apps →
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- 5KR Kill Sheet Card -->
+      <div class="flex flex-col justify-between p-6 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-950 border border-slate-800 hover:border-cyan-500/50 transition-all group shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-950/80 text-emerald-400 border border-emerald-800/60 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Live Production
+            </span>
+            <span class="text-xs font-mono text-slate-500">IADC WellSharp</span>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">5KR Kill Sheet</h3>
+          <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+            Interactive calculation engine with strict directional rounding rules (KMW round UP, MAMW round DOWN), live choke tracking, and printable PDF kill sheets.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300">Wait & Weight</span>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300">Driller's Method</span>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300">Horizontal TVD</span>
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+          <a href="https://kill.kcklayton.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300">
+            Launch App ↗
+          </a>
+          <a href="https://github.com/Greybeard00007/5kr-kill-sheet" target="_blank" class="text-xs text-slate-500 hover:text-slate-300 font-mono">
+            Source Code
+          </a>
+        </div>
+      </div>
+
+      <!-- WellControl Suite Card -->
+      <div class="flex flex-col justify-between p-6 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-950 border border-slate-800 hover:border-cyan-500/50 transition-all group shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-950/80 text-emerald-400 border border-emerald-800/60 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Live Production
+            </span>
+            <span class="text-xs font-mono text-cyan-400">MCP Server</span>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">WellControl Suite</h3>
+          <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+            7-screen cyberbase choke simulator, dynamic kill planner, multi-station torque & drag, and Model Context Protocol (MCP) tool server (1,312 tests).
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300">FastAPI</span>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300">WebSocket Choke</span>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300">Subsea HPHT</span>
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+          <a href="https://wellcontrol.kcklayton.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300">
+            Launch Simulator ↗
+          </a>
+          <a href="https://github.com/Greybeard00007/wellcontrol" target="_blank" class="text-xs text-slate-500 hover:text-slate-300 font-mono">
+            Source Code
+          </a>
+        </div>
+      </div>
+
+      <!-- WellSim Simulator Card -->
+      <div class="flex flex-col justify-between p-6 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-950 border border-slate-800 hover:border-cyan-500/50 transition-all group shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-950/80 text-emerald-400 border border-emerald-800/60 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Live Production
+            </span>
+            <span class="text-xs font-mono text-slate-500">Multiphase Engine</span>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">WellSim Simulator</h3>
+          <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+            Transient multiphase drift-flux blowout hydraulics, Beggs-Brill PVT, OLGA benchmarks, dynamic kill solver, and relief well magnetic ranging (783 tests).
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300">Drift-Flux</span>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300">Relief Well</span>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300">Monte Carlo</span>
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+          <a href="https://wellsim.kcklayton.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300">
+            Launch Console ↗
+          </a>
+          <a href="https://github.com/Greybeard00007/wellsim" target="_blank" class="text-xs text-slate-500 hover:text-slate-300 font-mono">
+            Source Code
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Articles Section -->
+  <section class="mt-14 sm:mt-20">
+    <div class="flex items-end justify-between mb-8">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Technical Deep-Dives & Notes</h2>
+        <p class="text-sm text-slate-400 mt-1">Mathematical analyses, deterministic AI design, and operational well control.</p>
+      </div>
+      <a href="/blog" class="text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-1">
+        All Articles →
+      </a>
+    </div>
+
+    <div class="space-y-4">
+      {posts.map(post => (
+        <article class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-slate-700 transition-colors">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
+            <h3 class="text-lg font-bold text-white hover:text-cyan-400 transition-colors">
+              <a href={`/blog/${post.id}`}>
+                {post.data.title}
+              </a>
+            </h3>
+            <time class="text-xs font-mono text-slate-500 whitespace-nowrap">
+              {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+            </time>
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed max-w-4xl">
+            {post.data.description}
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            {post.data.tags.map(tag => (
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800/60 text-cyan-400/90 border border-slate-700/60">
+                #{tag}
+              </span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout 
+  title="Technical Articles & Engineering Notes — Kirk Keel"
+  description="Mathematical analyses, directional rounding proofs, deterministic AI design, and operational well control engineering."
+>
+
+  <div class="max-w-4xl">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 text-xs font-mono uppercase tracking-widest mb-4">
+      Technical Publications
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+      Articles & Engineering Notes
+    </h1>
+    <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+      In-depth write-ups covering the physics of well control, directional rounding mathematics, Model Context Protocol (MCP) tool integration, and agentic drilling engineering.
+    </p>
+  </div>
+
+  <div class="space-y-6 mt-12 max-w-4xl">
+    {posts.map(post => (
+      <article class="p-6 sm:p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/40 transition-all group shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-3">
+          <h2 class="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+            <a href={`/blog/${post.id}`}>
+              {post.data.title}
+            </a>
+          </h2>
+          <time class="text-xs font-mono text-slate-500 whitespace-nowrap">
+            {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+          </time>
+        </div>
+
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+          {post.data.description}
+        </p>
+
+        <div class="flex flex-wrap items-center justify-between gap-4 mt-6 pt-4 border-t border-slate-800/80">
+          <div class="flex flex-wrap gap-2">
+            {post.data.tags.map(tag => (
+              <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-slate-800/80 text-cyan-400/90 border border-slate-700/60">
+                #{tag}
+              </span>
+            ))}
+          </div>
+
+          <a 
+            href={`/blog/${post.id}`} 
+            class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+          >
+            Read Article →
+          </a>
+        </div>
+      </article>
+    ))}
+  </div>
+
+</BaseLayout>
