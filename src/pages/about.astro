@@ -3,18 +3,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout 
-  title="About Kirk Keel — Energy AI Architect & Principal Well Operations Engineer"
-  description="25+ years in drilling, completions, well intervention, and well control engineering. Leading deterministic AI architecture and rig-edge telemetry systems."
+  title="About Kirk Keel — Senior Well Control Specialist & Energy AI Architect"
+  description="25+ years in well operations management, drilling, completions, and well interventions (CWI). Senior Well Control Specialist at Boots & Coots, Certified Well Control Instructor, and builder of deterministic Energy AI systems."
 >
 
   <div class="max-w-4xl mx-auto py-6">
-    <!-- Status & Availability Pill -->
+    <!-- Status & Credentials Pill -->
     <div class="flex flex-wrap items-center gap-3 mb-6">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/70 border border-emerald-800/80 text-emerald-400 text-xs font-mono uppercase tracking-wider">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        Available for Hire / Consulting / Advisory
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/70 border border-cyan-800/80 text-cyan-400 text-xs font-mono uppercase tracking-wider">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        Senior Well Control Specialist · Boots & Coots
       </div>
-      <span class="text-xs font-mono text-slate-400">Houston, TX & Remote</span>
+      <span class="text-xs font-mono text-emerald-400 border border-emerald-900 bg-emerald-950/40 px-2.5 py-0.5 rounded-full">Certified Well Control Instructor</span>
+      <span class="text-xs font-mono text-slate-400">Houston, TX</span>
     </div>
 
     <!-- Main Header -->
@@ -22,10 +23,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       Kirk Keel
     </h1>
     <p class="mt-3 text-lg sm:text-xl text-cyan-400 font-medium">
-      Energy AI Architect | Principal Drilling & Well Operations Engineer
+      Senior Well Control Specialist | Operations Management & Energy AI Architecture
     </p>
     <p class="mt-2 text-sm text-slate-400 font-mono">
-      25+ Years in High-Pressure Operations · Enterprise Agentic AI · Deterministic Physics Guardrails
+      25+ Years in Well Operations · Surface & Subsea BOPs · Active/Passive MPD · Deterministic Physics Guardrails
     </p>
 
     <!-- Executive Summary Card -->
@@ -34,19 +35,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
         <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
-        Executive Summary & Core Competencies
+        Operations Management & Engineering Background
       </h2>
       <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-        Over 25 years leading high-pressure drilling operations, completions, well intervention (CWI), and safety-critical well control across deepwater, HPHT, subsea, and complex extended-reach lateral wells. 
+        With over 25 years in operations management across land and offshore environments, my career has centered on the execution and pressure control integrity of complex well operations—drilling, completions, and well interventions (CWI). I have managed high-pressure, critical well operations utilizing both surface and subsea BOP systems enhanced with active and passive Managed Pressure Drilling (MPD).
       </p>
       <p class="text-sm sm:text-base text-slate-300 leading-relaxed mt-3">
-        Today, I architect **hybrid AI systems for hazardous energy environments**: coupling large language model orchestration and local Small Language Models (SLMs) with certified, deterministic physics engines via the **Model Context Protocol (MCP)**. My production engines strictly enforce API RP 53 and IADC WellSharp standards with floating-point directional rounding, eliminating hallucination in wellbore pressure management.
+        Currently serving as a <strong>Senior Well Control Specialist at Boots & Coots</strong> and a <strong>Certified Well Control Instructor</strong>, my operational focus is ensuring wellbore pressure integrity, regulatory adherence (API RP 53 / 59 / 16ST), and rigorous preparedness during complex formation kick events.
+      </p>
+      <p class="text-sm sm:text-base text-slate-300 leading-relaxed mt-3">
+        Over the past several years, I have coupled that operational reality with software engineering. In my development lab, I design and build **deterministic Energy AI architectures**: pairing Large Language Models and local rig-edge SLMs with certified, zero-dependency physics calculation engines via the **Model Context Protocol (MCP)**. My production engines eliminate probabilistic hallucinations in well control calculations by strictly enforcing IADC WellSharp directional rounding and API RP 53 tolerances.
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 pt-6 border-t border-slate-800/80 text-xs font-mono">
         <div>
           <div class="text-cyan-400 font-bold text-lg">25+ Yrs</div>
-          <div class="text-slate-400">Field & Engineering Experience</div>
+          <div class="text-slate-400">Well Operations Management</div>
         </div>
         <div>
           <div class="text-emerald-400 font-bold text-lg">2,731+</div>
@@ -54,53 +58,53 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div>
           <div class="text-purple-400 font-bold text-lg">14 Repos</div>
-          <div class="text-slate-400">Public Engineering Software</div>
+          <div class="text-slate-400">Production & Open-Source Software</div>
         </div>
       </div>
     </div>
 
-    <!-- Areas of Expertise Grid -->
+    <!-- Core Operational & Technical Pillars -->
     <div class="mt-12 space-y-8 text-sm sm:text-base text-slate-300 leading-relaxed">
       <section>
         <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-          Areas of Advisory & Technical Leadership
+          Operational Pillars & Domain Focus
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div class="p-5 rounded-2xl bg-slate-900/50 border border-slate-800">
             <h3 class="text-white font-bold text-sm mb-2 flex items-center gap-2">
-              <span class="text-cyan-400">01.</span> Rig Edge AI & Air-Gapped Telemetry
+              <span class="text-cyan-400">01.</span> Well Operations & Pressure Control
             </h3>
             <p class="text-xs text-slate-400 leading-relaxed">
-              Architecting sub-second anomaly detection (ROP breaks, kick pit gains, differential flow alarms) directly on rig-floor industrial hardware with containerized Ollama SLM sidecars operating without internet or satellite dependencies.
+              Drilling, completions, and well interventions (CWI) across land, offshore, and deepwater assets. Hands-on management of surface and subsea BOP stacks, choke manifolds, and well kill execution.
             </p>
           </div>
 
           <div class="p-5 rounded-2xl bg-slate-900/50 border border-slate-800">
             <h3 class="text-white font-bold text-sm mb-2 flex items-center gap-2">
-              <span class="text-emerald-400">02.</span> Deterministic MCP Physics Tool Servers
+              <span class="text-emerald-400">02.</span> Active & Passive MPD Systems
             </h3>
             <p class="text-xs text-slate-400 leading-relaxed">
-              Designing Model Context Protocol (MCP) servers that gate generative AI actions. Ensuring well control calculations (KMW, MAASP, Step-Down schedules) are executed with zero allowable numerical drift against API RP 53 and IADC standards.
+              Managed Pressure Drilling operations utilizing surface backpressure, continuous circulating systems, and rotating control devices (RCD) to navigate narrow drilling margins safely.
             </p>
           </div>
 
           <div class="p-5 rounded-2xl bg-slate-900/50 border border-slate-800">
             <h3 class="text-white font-bold text-sm mb-2 flex items-center gap-2">
-              <span class="text-purple-400">03.</span> Multiphase Blowout & Dynamic Kill Simulation
+              <span class="text-purple-400">03.</span> Deterministic MCP Physics Engines
             </h3>
             <p class="text-xs text-slate-400 leading-relaxed">
-              Transient drift-flux hydraulics modeling, non-ideal gas compressibility ($PV=ZnRT$), dynamic relief well magnetic ranging algorithms, and Monte Carlo blowout risk quantification.
+              Years of developing Model Context Protocol (MCP) tool servers that strictly gate AI reasoning with certified, deterministic calculations (KMW, MAASP, Step-Down schedules) backed by 2,731+ unit tests.
             </p>
           </div>
 
           <div class="p-5 rounded-2xl bg-slate-900/50 border border-slate-800">
             <h3 class="text-white font-bold text-sm mb-2 flex items-center gap-2">
-              <span class="text-amber-400">04.</span> Completions & Well Intervention (CWI)
+              <span class="text-amber-400">04.</span> Air-Gapped Rig-Edge Telemetry & SLMs
             </h3>
             <p class="text-xs text-slate-400 leading-relaxed">
-              Engineering expertise across coiled tubing limits, hydraulic workover, snubbing/stripping under pressure, wireline operations, tubing stress analysis, and barrier envelope integrity.
+              Real-time 1-second WITSML telemetry parsing, automated kick pit gain detection, and local Small Language Model (SLM) sidecars running on rig-floor hardware without internet or satellite dependence.
             </p>
           </div>
         </div>
@@ -110,25 +114,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <section class="mt-10">
         <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-          Certifications & Regulatory Standards
+          Certifications & Standards Compliance
         </h2>
         
         <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 space-y-4 text-xs sm:text-sm">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-slate-800/80 pb-3">
+            <span class="font-bold text-white">Well Control Instruction</span>
+            <span class="text-cyan-400 font-mono">Certified Well Control Instructor</span>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-slate-800/80 pb-3">
             <span class="font-bold text-white">IADC WellSharp</span>
-            <span class="text-cyan-400 font-mono">Supervisor Level / Subsea Drilling</span>
+            <span class="text-cyan-400 font-mono">Supervisor Level / Surface & Subsea Stacks</span>
           </div>
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-slate-800/80 pb-3">
-            <span class="font-bold text-white">IWCF (International Well Control Forum)</span>
-            <span class="text-cyan-400 font-mono">Level 4 Well Control</span>
-          </div>
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-slate-800/80 pb-3">
-            <span class="font-bold text-white">API Standards Mastery</span>
-            <span class="text-slate-300 font-mono">API RP 53, API RP 59, API Spec 16A/D, API RP 16ST</span>
+            <span class="font-bold text-white">Industry Standards Mastery</span>
+            <span class="text-slate-300 font-mono">API RP 53 (BOP Systems), API RP 59 (Well Control), API Spec 16A/D, API RP 16ST</span>
           </div>
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-            <span class="font-bold text-white">Multiphase Hydraulics & PVT</span>
-            <span class="text-slate-300 font-mono">Zuber-Findlay Drift-Flux, Peng-Robinson, Beggs-Brill</span>
+            <span class="font-bold text-white">Specialized Hydraulics & Modeling</span>
+            <span class="text-slate-300 font-mono">Active/Passive MPD Hydraulics, Zuber-Findlay Drift-Flux, Real-Gas (PV=ZnRT) Non-Linearity</span>
           </div>
         </div>
       </section>
@@ -137,12 +141,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <section class="mt-10">
         <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-          Technical Skills & Architecture Stack
+          Software & AI Architecture Stack
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
             <h3 class="font-bold text-cyan-400 text-xs font-mono uppercase tracking-wider mb-2">Systems & Physics</h3>
-            <p class="text-xs text-slate-400 leading-relaxed">Python (FastAPI, NumPy, SciPy, Pydantic), C++, Rust, WebSocket state streaming, transient ODE solvers, Docker microservices.</p>
+            <p class="text-xs text-slate-400 leading-relaxed">Python (FastAPI, NumPy, SciPy, Pydantic), C++, Rust, WebSocket telemetry streams, transient ODE solvers, Docker microservices.</p>
           </div>
           <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
             <h3 class="font-bold text-emerald-400 text-xs font-mono uppercase tracking-wider mb-2">AI, Rig Edge & MLOps</h3>
@@ -159,9 +163,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <section class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900 to-cyan-950/40 border border-slate-800 mt-12">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div>
-            <h3 class="text-xl font-bold text-white">Let's Connect</h3>
+            <h3 class="text-xl font-bold text-white">Connect & Collaborate</h3>
             <p class="text-sm text-slate-300 mt-1 max-w-xl">
-              Available for enterprise energy AI architecture, drilling automation advisory, principal consulting, and board/technical advisory roles.
+              Interested in technical discussions around well control integrity, managed pressure drilling, deterministic physics modeling, and rig-edge AI systems.
             </p>
             <div class="flex flex-wrap items-center gap-4 mt-4 text-xs font-mono">
               <a href="mailto:kirk.david.keel@gmail.com" class="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold transition-colors">
